@@ -1,0 +1,96 @@
+.card.reklama_card .row {
+    padding: 7px;
+}
+.reklama_card label {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #757575;
+}
+@media (min-width: 768px) {
+    .card.reklama_card .row {
+        padding: 10px;
+    }
+}
+.for-label label {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.di-inline {
+    font-size: 10px !important;
+}
+.messege-alert-box {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 2500;
+    display: none;
+    transform-origin: left;
+    transition: .3s linear;
+    animation: alerAnime2 .3s linear;
+    transform-origin: left;
+    transition: .3s linear;
+}
+.messege-alert-box.active {
+    display: flex;
+    animation: alerAnime1 .3s linear;
+    transform-origin: left;
+    transition: .3s linear;
+    z-index: 2500;
+}
+@keyframes alerAnime2 {
+    from {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX();
+    }
+}
+@keyframes alerAnime1 {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.messege-alert {
+    width: 70% !important;
+    z-index: 2000;
+}
+
+
+
+@media (min-width: 992px) {
+    .card.reklama_card {
+        max-width: 850px;
+        margin: 25px auto;
+    }
+    .card.reklama_card .row {
+        padding: 25px;
+    }
+    .card.reklama_card h5 {
+        font-size: 1.7rem;
+    }
+    .for-label label {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+    .di-inline {
+        font-size: 16px !important;
+    }
+    .reklama_card label {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}

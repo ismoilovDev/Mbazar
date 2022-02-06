@@ -1,0 +1,94 @@
+.box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    padding: 4px;
+    transition: all .2s linear;
+    background-color: #fff;
+    z-index: -1;
+}
+.box:hover {
+    background-color: #fff;
+    box-shadow: 0px 5px 30px rgb(209 213 223 / 50%)
+}
+.box p {
+    width: 100%;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+.box p svg {
+    font-size: 18px;
+}
+.box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: .2s all linear;
+    z-index: 1;
+    border-radius: 7px;
+}
+.box .card-body {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    min-height: 30px;
+    z-index: 10;
+}
+.box p.card-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.box .card-text {
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box .card-text svg {
+    margin-right: 10px;
+}
+.text-right {
+    text-align: right;
+}
+@media (min-width: 768px) {
+    .box img {
+        height: 270px;
+    }
+    .box p.card-title {
+        font-size: 1rem;
+    }
+    .box .card-text {
+        font-size: 1.1rem;
+    }
+    .box .content-money {
+        padding: 5px 10px;
+    }
+}
+@media (min-width: 992px) {
+    .box {
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .box img {
+        height: 300px;
+    }
+    .box p svg {
+        font-size: 22px;
+    }
+    .box .card-text {
+        font-size: 1.2rem;
+    }
+    .box .content-money {
+        padding: 8px 20px;
+    }
+}

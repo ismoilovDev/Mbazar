@@ -1,0 +1,43 @@
+.content.login {
+    padding: 20px 0 !important;
+}
+.login-icon svg {
+    font-size: 1.5rem;
+    color: #111;
+    transform: translateX(10px);
+}
+.login h3 {
+    transform: translateX(10px);
+}
+.login p {
+    color: #111;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.login p a {
+    font-style: italic;
+    font-weight: 500;
+    transform: translateX(20px);
+}
+@media (min-width: 768px) {
+    .login h3 {
+        transform: translateX(0);
+    }
+    .login p {
+        font-size: 1rem;
+        margin: 17px 0;
+    }
+    .login-icon svg{
+        transform: translateX(0);
+    }
+}
+@media (min-width: 768px) {
+    .content.login {
+        padding: 60px 0 !important;
+    }
+    .login-icon svg {
+        font-size: 1.8rem;
+        margin: 10px 0;
+    }
+}

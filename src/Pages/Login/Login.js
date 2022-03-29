@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Alert, Button, Card, Col, Container, Form, Row} from 'react-bootstrap'
 import http from '../../Services/getData';
-import { FiUserCheck } from "react-icons/fi";
 import { Link, useHistory } from 'react-router-dom';
 import './Login.css'
+import { FormControl, TextField } from '@mui/material';
 
 
 function Login() {
    const [hasError, setHasError] = useState(false);
-   const [telValue, setTelValue] = useState(0)
+   const [telValue, setTelValue] = useState('')
    const [passValue, setPassValue] = useState('')
    const history = useHistory();
 
@@ -24,8 +24,8 @@ function Login() {
             console.log(res.data.data.token);
             window.localStorage.setItem('token', res.data.data.token);
             window.localStorage.setItem('user_id', res.data.data.user_id);
-            history.push('/');
             window.location.reload(false);
+            history.push('/');
          })
          .catch((err) => {
             console.log(err);
@@ -33,14 +33,11 @@ function Login() {
          })
    }
    return (
-      <div className='content login'>
+      <div className='content login py-3 py-md-5'>
          <Container>
-            <h3>Кириӯ</h3>
+            <h3 className='my-2 text-center mb-md-3'>Кириӯ</h3>
             <Row>
                <Col md="6" className='mx-auto'>
-                  <div className='my-3 login-icon'>
-                     <FiUserCheck />
-                  </div>
                   <Card>
                      <Card.Body>
                         {
@@ -53,38 +50,36 @@ function Login() {
                            )
                         }
                         <Form onSubmit={onFormSubmit}>
-                           <Form.Group className="my-3 me-sm-2 mb-sm-0">
-                              <Form.Label
-                                 className="me-sm-2 w-100"
-                                 htmlFor="telephone"
-                              >
-                                 Телефон
-                                 <Form.Control
-                                    className='w-100 mt-2 mt-sm-3'
-                                    id="telephone"
-                                    name="phone"
+                           <Col xs="12" className='my-3 mr-sm-2 mb-sm-0 mb-md-4'>
+                              <FormControl className='w-100'>
+                                 <TextField
+                                    size="small"
+                                    className="w-100 for-label mb-3"
+                                    type="text"
+                                    variant="outlined"
+                                    label="Телефон"
+                                    value={telValue}
+                                    onChange={(e) => { setTelValue(e.target.value) }}
                                     placeholder="+998931234567"
-                                    type="tel"
-                                    onChange={(e) => setTelValue(e.target.value)}
+                                    required
                                  />
-                              </Form.Label>
-                           </Form.Group>
-                           <Form.Group className="my-3 me-sm-2 mb-sm-0">
-                              <Form.Label
-                                 className="me-sm-2 w-100"
-                                 for="parol"
-                              >
-                                 Парол
-                                 <Form.Control
-                                    className='w-100 mt-2 mt-sm-3'
-                                    id="parol"
-                                    name="parol"
-                                    placeholder="*fewf*//"
+                              </FormControl>
+                           </Col>
+                           <Col xs="12" className='my-3 mr-sm-2 mb-sm-0'>
+                              <FormControl className='w-100'>
+                                 <TextField
+                                    size="small"
+                                    className="w-100 for-label mb-3"
                                     type="password"
-                                    onChange={(e) => setPassValue(e.target.value)}
+                                    variant="outlined"
+                                    label="Парол"
+                                    value={passValue}
+                                    onChange={(e) => { setPassValue(e.target.value) }}
+                                    placeholder="qwerty123"
+                                    required
                                  />
-                              </Form.Label>
-                           </Form.Group>
+                              </FormControl>
+                           </Col>
                            <Row className='justify-content-center'>
                               <Button type='submit' className='d-inline mt-3 w-25'>
                                  Кириў

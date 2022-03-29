@@ -2,8 +2,8 @@
     padding: 7px;
 }
 .reklama_card label {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     letter-spacing: 1px;
     color: #757575;
 }
@@ -82,15 +82,13 @@
         font-size: 1.7rem;
     }
     .for-label label {
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin-top: 1px;
     }
     .di-inline {
         font-size: 16px !important;
     }
     .reklama_card label {
-        font-size: 16px;
-        font-weight: 500;
     }
 }

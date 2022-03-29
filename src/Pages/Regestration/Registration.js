@@ -4,6 +4,7 @@ import http from '../../Services/getData';
 import { FiUserPlus } from "react-icons/fi";
 import { Link, useHistory } from 'react-router-dom';
 import './Registration.css';
+import { FormControl, TextField } from '@mui/material';
 
 
 function Registation() {
@@ -27,8 +28,8 @@ function Registation() {
             console.log(res.data);
             window.localStorage.setItem('token', res.data.data.token);
             window.localStorage.setItem('user_id', res.data.data.user_id);
-            history.push('/');
             window.location.reload(false);
+            history.push('/');
          })
          .catch((err) => {
             console.log(err);
@@ -56,54 +57,51 @@ function Registation() {
                            )
                         }
                         <Form onSubmit={onFormSubmit} method='post' action='http://Test.malbazar.uz/api/register'>
-                           <Form.Group className="my-3 me-sm-2 mb-sm-0">
-                              <Form.Label
-                                 className="me-sm-2 w-100"
-                                 for="telephone"
-                              >
-                                 Телефон
-                                 <Form.Control
-                                    className='w-100 mt-2'
-                                    id="telephone"
-                                    name="phone"
-                                    placeholder="+998931234567"
-                                    type="tel"
-                                    onChange={(e) => setTelValue(e.target.value)}
-                                 />
-                              </Form.Label>
-                           </Form.Group>
-                           <Form.Group className="my-3 me-sm-2 mb-sm-0">
-                              <Form.Label
-                                 className="me-sm-2 w-100"
-                                 for="parol"
-                              >
-                                 Парол
-                                 <Form.Control
-                                    className='w-100 mt-2'
-                                    id="parol"
-                                    name="parol"
-                                    placeholder="qwerty123"
-                                    type="password"
-                                    onChange={(e) => setPassValue(e.target.value)}
-                                 />
-                              </Form.Label>
-                           </Form.Group>
-                           <Form.Group className="my-3 me-sm-2 mb-sm-0">
-                              <Form.Label
-                                 className="me-sm-2 w-100"
-                                 for="name"
-                              >
-                                 Атиңиз
-                                 <Form.Control
-                                    className='w-100 mt-2'
-                                    id="name"
-                                    name="name"
-                                    placeholder=""
+                           <Col xs="12" className='my-3 mr-sm-2 mb-sm-0 mb-md-4'>
+                              <FormControl className='w-100'>
+                                 <TextField
+                                    size="small"
+                                    className="w-100 for-label mb-3"
                                     type="text"
-                                    onChange={(e) => setName(e.target.value)}
+                                    variant="outlined"
+                                    label="Телефон"
+                                    value={telValue}
+                                    onChange={(e) => { setTelValue(e.target.value) }}
+                                    placeholder="+998931234567"
+                                    required
                                  />
-                              </Form.Label>
-                           </Form.Group>
+                              </FormControl>
+                           </Col>
+                           <Col xs="12" className='my-3 mr-sm-2 mb-sm-0'>
+                              <FormControl className='w-100'>
+                                 <TextField
+                                    size="small"
+                                    className="w-100 for-label mb-3"
+                                    type="password"
+                                    variant="outlined"
+                                    label="Парол"
+                                    value={passValue}
+                                    onChange={(e) => { setPassValue(e.target.value) }}
+                                    placeholder="qwerty123"
+                                    required
+                                 />
+                              </FormControl>
+                           </Col>
+                           <Col xs="12" className='my-3 mr-sm-2 mb-sm-0'>
+                              <FormControl className='w-100'>
+                                 <TextField
+                                    size="small"
+                                    className="w-100 for-label mb-3"
+                                    type="text"
+                                    variant="outlined"
+                                    label="Атиңиз"
+                                    value={name}
+                                    onChange={(e) => { setName(e.target.value) }}
+                                    placeholder="qwerty123"
+                                    required
+                                 />
+                              </FormControl>
+                           </Col>
                            <Row className='justify-content-center'>
                               <Button type='submit' className='d-inline mt-3 w-50'>
                                  Дизимнен өтиу

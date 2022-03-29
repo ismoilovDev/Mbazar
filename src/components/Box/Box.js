@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { VscLocation } from "react-icons/vsc";
 import './Box.css';
-import { IconButton } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Box({ item }) {
 

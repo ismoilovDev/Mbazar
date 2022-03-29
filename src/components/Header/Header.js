@@ -170,7 +170,7 @@ export default function PrimarySearchAppBar({ setResult, userId }) {
          <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                <Toolbar>
-                  <Container>
+                  <Container className='w-100'>
                      <div className='w-100 d-flex justify-content-between'>
                         <Link to="/">
                            <div className='logo-box'>
@@ -192,8 +192,8 @@ export default function PrimarySearchAppBar({ setResult, userId }) {
          </Box>
 
          <div className='navbar'>
-            <Container>
-               <Row className='py-2 h-100 w-100 align-items-center'>
+            <Container className='w-100'>
+               <Row className='py-md-2 h-100 w-100 align-items-center'>
                   <Col xs="6" md="3">
                      <div className='bolim' ref={wrapperRef}>
                         <div onClick={handleShow2} className='brand d-flex'>

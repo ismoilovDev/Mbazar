@@ -5,6 +5,10 @@
     left: 0;
     z-index: 1000;
 }
+.row {
+    margin: 0 !important;
+    padding: 0;
+}
 .logo {
     width: 45px;
     height: 32px;
@@ -277,6 +281,9 @@
     }
 }
 @media (min-width: 992px) {
+    .navbar {
+        padding: 10px 0;
+    }
     .logo {
         width: 70px;
         height: 50px;

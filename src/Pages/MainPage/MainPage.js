@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Box from '../../components/Box/Box';
 import Slider from '../../components/Slider/Slider'
-import { GiCamel, GiChicken, GiCow, GiGoat, GiHorseHead, GiSheep } from "react-icons/gi";
-import { Link } from 'react-router-dom';
-import { Carousel } from '@trendyol-js/react-carousel';
+// import { GiCamel, GiChicken, GiCow, GiGoat, GiHorseHead, GiSheep } from "react-icons/gi";
+// import { Link } from 'react-router-dom';
+// import { Carousel } from '@trendyol-js/react-carousel';
 import "./MainPage.css";
 
 function MainPage({ lastes, views }) {
@@ -21,7 +21,7 @@ function MainPage({ lastes, views }) {
          <Slider></Slider>
          <div className='main_page_menu'>
             <Container className='py-4 mt-4 mb-3'>
-               <Carousel show={3.5} slide={1} swiping={true} className="py-2" autoplay={true} >
+               {/* <Carousel show={3.5} slide={1} swiping={true} className="py-2" autoplay={true} >
                   <div className='main_menu_box'>
                      <Link to="/tuya">
                         <div className='main_menu_box_icon'>
@@ -82,7 +82,7 @@ function MainPage({ lastes, views }) {
                         </div>
                      </Link>
                   </div>
-               </Carousel>
+               </Carousel> */}
             </Container>
          </div>
          <div>

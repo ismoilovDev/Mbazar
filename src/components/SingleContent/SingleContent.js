@@ -9,16 +9,17 @@ import './SingleContent.css'
 import Box from '../Box/Box';
 
 function SingleContent({ match }) {
-   
+   console.log(match.params.id);
    const [test, setTest] = useState(false);
    const [data, setData] = useState([]);
    const [likes, setLikes] = useState([]);
    const getData = async () => {
       await http.get(`/animal/${match.params.id}`)
          .then((res) => {
-            setData(res.data.data.animal);
+            setData(res.data.data.animal[0]);
             setLikes(res.data.data.likes);
-            console.log(res.data.data);
+            console.log(res.data.data.animal.description);
+            console.log(res.data.data.animal.city_name);
             setTest(true)
          })
          .catch(err => console.log(err));

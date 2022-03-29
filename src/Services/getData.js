@@ -1,13 +1,11 @@
 import axios from "axios";
 
-// HTTP so'rov hosil qilish
+
 const http = axios.create({
-    baseURL: "https://malbazar.uz/api",  // Server Urli
+    baseURL: "https://malbazar.uz/api",
     headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token') // So'rov sarlavhasi
+        Authorization: 'Bearer ' + localStorage.getItem('token')
     }
 })
 
-
-// headers: {"X-CSRFToken": csrfToken},
 export default http;

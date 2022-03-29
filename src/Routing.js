@@ -36,8 +36,8 @@ function App() {
   const [tovuq, setTovuq] = useState([]);
   const [molOzuqi, setMolOzuqi] = useState([]);
   const [result, setResult] = useState([]);
+  const userId = window.localStorage.getItem('user_id');
 
-  const userId = window.localStorage.getItem('user_id')
   // GET Data ->
   useEffect(() => {
     getData();
